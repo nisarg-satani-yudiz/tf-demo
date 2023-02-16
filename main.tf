@@ -6,7 +6,7 @@ module "key_pair" {
 module "ec2" {
   source    = "./modules/ec2"
   public_sg = [module.security_groups.output_security_group_id]
-  ec2_key_name = module.key_pair.ssh_key_games247
+  ec2_key_name = module.key_pair.output_key_name
   # security_groups = module.security_groups.output_security_group_id
 }
 

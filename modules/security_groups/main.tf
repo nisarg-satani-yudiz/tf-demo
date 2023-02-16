@@ -1,7 +1,7 @@
 resource "aws_security_group" "server_sg" {
   name        = "server_sg"
   description = "security group for ec2 server"
-  vpc_id = "vpc-0b087589f55de5998"
+  vpc_id = "vpc-895e94e2"
 
     dynamic "ingress" {
       for_each = var.sg_ports

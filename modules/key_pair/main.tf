@@ -3,6 +3,10 @@ resource "tls_private_key" "rsa_key_games247" {
   rsa_bits  = 4096
 }
 
+resource "aws_key_pair" "ssh_key_pair" {
+  key_name = "${var.private_key_name}"
+  public_key = tls_private_key.rsa_key_games247.public_key_openssh
+}
 locals {
   ssh_key = "${base64encode(tls_private_key.rsa_key_games247.private_key_pem)}"
 }

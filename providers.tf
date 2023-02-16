@@ -1,6 +1,6 @@
 provider "aws" {
   region  = var.region
-  profile = "demo-user"
+  profile = "tf"
 }
   provider "tls" {
   version = "4.0"
